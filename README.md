@@ -5,6 +5,8 @@ This repository provides code to detect people in car-cabin images and classify 
 
 The mmdetection framework (https://github.com/open-mmlab/mmdetection) was used to train and apply an object detector to detect people.
 
+
+
 # Classfication
 
 ## General
