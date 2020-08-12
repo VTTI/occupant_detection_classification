@@ -1,6 +1,12 @@
 # occupant_detection_classification
 This repository provides code to detect people in car-cabin images and classify the type of passengers in each image (driver, front-seat passenger, back-seat passenger).
 
+# Detection
+
+The mmdetection framework (https://github.com/open-mmlab/mmdetection) was used to train and apply an object detector to detect people.
+
+# Classfication
+
 ## General
 Run using: python "name".py --det "folder_containing_detections" --gt "folder_containing_ground_truth"
 
