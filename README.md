@@ -5,7 +5,14 @@ This repository provides code to detect people in car-cabin images and classify 
 
 The mmdetection framework (https://github.com/open-mmlab/mmdetection) was used to train and apply an object detector to detect people.
 
+Instructions on how to use the framework are located in https://mmdetection.readthedocs.io/en/latest/.
+An example is given in "Image demo" (https://mmdetection.readthedocs.io/en/latest/getting_started.html) on how to run and test for a single image using a configuration file and a checkpoint file.
 
+The configuration file used to train and test the Faster RCNN model is: config_faster_rcnn_x101_32x4d.py.
+
+The checkpoint file can be found in: 
+
+For further processing, detections should be converted to format: "person confidence xmin ymin xmax ymax".
 
 # Classfication
 
@@ -21,7 +28,7 @@ To perform occupant classification for the BCI_TrainingD dataset and for all ima
 
 "folder_containing_detections" should contain detections for each image in .txt format.
 
-"folder_containing_ground_truth" should contain ground truth for each image in .txt format.
+"folder_containing_ground_truth" should contain ground truth for each image in .txt format (Yolo format from CVAT annotation tool https://github.com/opencv/cvat).
 
 ## VTT1_OONZ5I
 To perform occupant classification for the VTT1_OONZ5I dataset and for all images use:
@@ -30,7 +37,7 @@ To perform occupant classification for the VTT1_OONZ5I dataset and for all image
 
 "folder_containing_detections" should contain detections for each image in .txt format.
 
-"folder_containing_ground_truth" should contain a file named joint.json
+"folder_containing_ground_truth" should contain a file named joint.json (COCO format from CVAT annotation tool https://github.com/opencv/cvat).
 
 For day only images: "name".py -> VTT1_OONZ5I_day.py
 
