@@ -30,12 +30,7 @@ Output
 
 For each occupant type (driver, front seat passenger, back seat passenger):
 
-True Positives
+True Positives, True Negatives, False Positives, False Negatives, Accuracy
 
-True Negatives
-
-False Positives
-
-False Negatives
-
-Accuracy
+Optional Output (can be obtained by commenting out):
+ROC curve, AUC, confidence thresholds that results in maximum F1 score
