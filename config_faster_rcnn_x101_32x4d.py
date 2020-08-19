@@ -108,8 +108,6 @@ test_cfg = dict(
         score_thr=0.05, nms=dict(type='nms', iou_thr=0.5), max_per_img=100))
 
 dataset_type = 'CocoDataset'
-annnotation_root = '/vtti/scratch/ipapakis/ground_truth/passenger/'
-images_root = '/vtti/scratch/ipapakis/data/PassengerDetection/'
 img_norm_cfg = dict(
     mean=[123.675, 116.28, 103.53], std=[58.395, 57.12, 57.375], to_rgb=True)
 train_pipeline = [
@@ -147,28 +145,6 @@ test_pipeline = [
             dict(type='Collect', keys=['img']),
         ])
 ]
-classes = ('./passenger_classes.txt')
-data = dict(
-    samples_per_gpu=2,
-    workers_per_gpu=2,
-    train=dict(
-        type=dataset_type,
-        ann_file=annnotation_root + 'train.json',
-        img_prefix=images_root + 'train/',
-        pipeline=train_pipeline,
-        classes=classes),
-    val=dict(
-        type=dataset_type,
-        ann_file=annnotation_root + 'val.json',
-        img_prefix=images_root + 'val/',
-        pipeline=test_pipeline,
-        classes=classes),
-    test=dict(
-        type=dataset_type,
-        ann_file=annnotation_root + 'test.json',
-        img_prefix=images_root + 'test/',
-        pipeline=test_pipeline,
-        classes=classes))
 
 # optimizer
 dist_params = dict(backend='nccl')
@@ -189,13 +165,3 @@ log_config = dict(
         dict(type='TextLoggerHook'),
         # dict(type='TensorboardLoggerHook')
     ])
-
-#Change these accordingly
-load_from = '/vtti/scratch/ipapakis/mmdetection/pre-trained_models/faster_rcnn_x101_32x4d_fpn_1x_coco_20200203-cff10310.pth'
-resume_from = None
-work_dir = './work_dirs/passenger/finetune/faster_rcnn_x101_32x4d'
-total_epochs = 15
-checkpoint_config = dict(interval=2)
-evaluation = dict(interval=2, metric='bbox')
-# workflow = [('train', 1)]
-workflow = [('train', 1), ('val', 1)]
