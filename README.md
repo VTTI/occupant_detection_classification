@@ -8,9 +8,13 @@ Instructions on how to use the framework are located in https://mmdetection.read
 
 ## Installation
 To install the framework the recommened method is by following these steps:
+
 Install Docker (https://www.docker.com/).
+
 Create a new file named "Dockerfile" and copy inside the contents of "docker/Dockerfile".
+
 Run: docker build . -t mmdetection
+
 Run: nvidia-docker run -it --gpus=all --rm -v "path_to_local_folder":"path_inside_docker" mmdetection bash
 
 ## Usage
