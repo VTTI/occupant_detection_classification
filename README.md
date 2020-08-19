@@ -26,9 +26,12 @@ The checkpoint file can be found in:
 
 For further processing, output detections should be converted to .txt format with: "person confidence xmin ymin xmax ymax" on each row and a separate .txt for each image.
 
-# Classfication
+# Classification
 
 ## General
+
+Install dependencies by running: pip install -r requirements_classification.txt
+
 Run using: python "name".py --det "folder_containing_detections" --gt "folder_containing_ground_truth"
 
 Annotations and pre-computed detections are provided in: 
