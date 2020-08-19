@@ -4,15 +4,23 @@ This repository provides code to detect people in car-cabin images and classify 
 # Detection
 
 The mmdetection framework (https://github.com/open-mmlab/mmdetection) was used to train and apply an object detector to detect people.
-
 Instructions on how to use the framework are located in https://mmdetection.readthedocs.io/en/latest/.
-An example is given in "Image demo" (https://mmdetection.readthedocs.io/en/latest/getting_started.html) on how to run and test for a single image using a configuration file and a checkpoint file.
+
+## Installation
+To install the framework the recommened method is by following these steps:
+Install Docker (https://www.docker.com/).
+Create a new file named "Dockerfile" and copy inside the contents of "docker/Dockerfile".
+Run: docker build . -t mmdetection
+Run: nvidia-docker run -it --gpus=all --rm -v "path_to_local_folder":"path_inside_docker" mmdetection bash
+
+## Usage
+An example is given in "demo/inference_demo.ipynb" (https://mmdetection.readthedocs.io/en/latest/getting_started.html) on how to run and test for a single image using a configuration file and a checkpoint file. Create a new python file copying the contents of it and run accordingly.
 
 The configuration file used to train and test the Faster RCNN model is: config_faster_rcnn_x101_32x4d.py.
 
 The checkpoint file can be found in: 
 
-For further processing, detections should be converted to format: "person confidence xmin ymin xmax ymax".
+For further processing, output detections should be converted to .txt format with: "person confidence xmin ymin xmax ymax" on each row and a separate .txt for each image.
 
 # Classfication
 
