@@ -145,7 +145,22 @@ test_pipeline = [
             dict(type='Collect', keys=['img']),
         ])
 ]
-
+classes = ('./passenger_classes.txt')
+data = dict(
+    samples_per_gpu=2,
+    workers_per_gpu=2,
+    train=dict(
+        type=dataset_type,
+        pipeline=train_pipeline,
+        classes=classes),
+    val=dict(
+        type=dataset_type,
+        pipeline=test_pipeline,
+        classes=classes),
+    test=dict(
+        type=dataset_type,
+        pipeline=test_pipeline,
+        classes=classes))
 # optimizer
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
