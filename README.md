@@ -20,7 +20,7 @@ Run: nvidia-docker run -it --gpus=all --rm -v "path_to_local_folder":"path_insid
 ## Usage
 An example is given in "demo/inference_demo.ipynb" (https://mmdetection.readthedocs.io/en/latest/getting_started.html) on how to run and test for a single image using a configuration file and a checkpoint file. Create a new python file copying the contents of it and run accordingly.
 
-The configuration file used to train and test the Faster RCNN model is: config_faster_rcnn_x101_32x4d.py.
+The configuration file used to test the Faster RCNN model is: config_faster_rcnn_x101_32x4d.py.
 
 The checkpoint file can be found in: http://mirror.vtti.vt.edu/vtti/ctbs/passenger_detection/v1.0/faster_rcnn_x101_32x4d.pth
 
