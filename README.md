@@ -22,7 +22,7 @@ An example is given in "demo/inference_demo.ipynb" (https://mmdetection.readthed
 
 The configuration file used to train and test the Faster RCNN model is: config_faster_rcnn_x101_32x4d.py.
 
-The checkpoint file can be found in: 
+The checkpoint file can be found in: http://mirror.vtti.vt.edu/vtti/ctbs/passenger_detection/v1.0/faster_rcnn_x101_32x4d.pth
 
 For further processing, output detections should be converted to .txt format with: "person confidence xmin ymin xmax ymax" on each row and a separate .txt for each image.
 
@@ -34,7 +34,7 @@ Install dependencies by running: pip install -r requirements_classification.txt
 
 Run using: python "name".py --det "folder_containing_detections" --gt "folder_containing_ground_truth"
 
-Annotations and pre-computed detections are provided in: 
+Annotations and pre-computed detections are provided in: https://dataverse.vtti.vt.edu/dataset.xhtml?persistentId=doi%3A10.15787%2FVTT1%2FWS8ORW
 
 ## BCI_TrainingD
 To perform occupant classification for the BCI_TrainingD dataset and for all images use:
